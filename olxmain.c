@@ -101,6 +101,10 @@ void R_CheckAuthClient(REQ_db_status_t* status,void* data){
     RES_sv_status_t sv_status;
     CreateRES_sv_status(&sv_status);
     sv_status.code=status->code;
+    if(status->code==1){
+        olxclient_t* olxcl=info->user;
+        olxcl->auth=true;
+    }
     sv_SendPackResIndex(info->user,&sv_status,info->indexpack);
     
     free(data);

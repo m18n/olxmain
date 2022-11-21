@@ -1,9 +1,24 @@
 
 #include"olxmain.h"
-
+// void Send(){
+//     pthread_mutex_lock(&mutex);
+//     printf("START SEND %d\n",a);
+//     a=20;
+//     sleep(5);
+//     printf("END SEND %d\n",a);
+//     pthread_mutex_unlock(&mutex);
+// }
+// void test(){
+//     pthread_t thread;
+//     pthread_create(&thread, NULL, Send, NULL);
+//     pthread_create(&thread, NULL, Send, NULL);
+//     a=30;
+//     printf("\n%d\n",a);
+//     sleep(20);
+// }
 // variable test not forget condition variable
 int main(){
-   
+
     cl_InitClient(&cl_servdb);
     cl_InitREQPack(&cl_servdb);
     cl_ClientConnect(&cl_servdb,"192.168.0.105",9998);
